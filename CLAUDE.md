@@ -60,17 +60,32 @@ At the end of every task, report one of:
 
 ## Conventions
 
-- Python version: see `.python-version`, `pyproject.toml`, or project documentation.
+
+Bash Conventions
+- Use Bash for executable shell scripts.
+- begin Bash scripts with #!/usr/bin/env bash.
+- Use set -euo pipefail by default, unless a documented reason requires different behavior.
+- Pefer Bash built-ins where practical.
+- Avoid unnecessary external dependencies.
+- Use explicit function and variable names.
+- Keep functions focused on a single responsibility.
+- Avoid deeply nested conditional logic.
+- Use early returns for invalid conditions.
+- Keep scripts readable and maintainable.
+
+Naming Conventions
+- Script filenames: kebab-case.sh.
+- Function names: snake_case.
+- Local variables: snake_case.
+- Constants and exported environment variables: UPPER_SNAKE_CASE.
+- Job directory names: kebab-case.
+- systemd unit filenames: kebab-case.service and kebab-case.timer.
 - Format all code using the project's configured formatter before committing.
 - Prefer the Python standard library when practical. New dependencies must be justified in the pull request description.
 - All public modules, classes, and functions must include docstrings.
-- Comments should explain *why*, not *what*. Avoid comments that simply restate the code.
+- Comments should explain *why* and *what*.
 - Follow PEP 8 style guidelines.
 - Use type hints for all new functions, methods, and public interfaces.
-- Function, variable, file, class, and package names must follow Python naming conventions:
-  - `snake_case` for variables, functions, files, and modules
-  - `PascalCase` for classes
-  - `UPPER_CASE` for constants
 - Keep functions focused on a single responsibility.
 - Avoid hardcoded values. Use configuration files, environment variables, or command-line arguments.
 - Store secrets, credentials, API keys, and connection strings in environment variables or approved secret management systems.
@@ -160,65 +175,6 @@ source .venv/bin/activate       # Linux/Mac
 pip install -r requirements.txt
 ```
 
-### Development
-
-```bash
-python main.py
-```
-
-### Testing
-
-```bash
-pytest
-```
-
-### Coverage
-
-```bash
-pytest --cov
-```
-
-### Formatting
-
-```bash
-black .
-```
-
-### Linting
-
-```bash
-ruff check .
-```
-
-### Type Checking
-
-```bash
-mypy .
-```
-
-## Project Structure
-
-```text
-  __init__.py
-  main.py
-  config/
-  services/
-  models/
-  utilities/
-
-tests/
-    unit/
-    integration/
-
-data/
-    input/
-    output/
-
-requirements.txt
-pyproject.toml
-README.md
-CHANGELOG.md
-.env
 ```
 
 ## Pull Request Requirements
@@ -231,16 +187,6 @@ CHANGELOG.md
 - `CHANGELOG.md` is updated for user-facing or operational changes.
 - New dependencies are documented and justified.
 - Include testing evidence in the pull request description.
-
-## Data Engineering and Automation Standards
-
-- Use pandas vectorized operations instead of row-by-row loops whenever practical.
-- Prefer Parquet over CSV for large datasets when supported.
-- Explicitly define data types for large file processing to improve performance and consistency.
-- Validate input files before processing.
-- Write output files atomically when possible.
-- Use configuration-driven paths instead of hardcoded directories.
-- Design scripts to support command-line arguments and automation tools such as UiPath, Power Automate, Task Scheduler, or CI/CD pipelines.
 
 ## Git Standards
 
