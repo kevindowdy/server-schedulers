@@ -17,6 +17,11 @@ installers/install-<host>.sh         # deploys that host's jobs as systemd units
 
 ## Deploying to a host
 
+Clone repository to target host in tools directory
+```bash
+git clone git@github.com:kevindowdy/server-schedulers.git
+```
+
 Run the matching installer as root on the target host after pulling this repo:
 
 ```bash
