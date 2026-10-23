@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-23
+
+
 ### Added
 
 - `youtube-social` job: systemd service and timer running `main.py --group social` daily at 09:00 on air01.
