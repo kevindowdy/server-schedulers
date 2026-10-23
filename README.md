@@ -14,6 +14,7 @@ installers/install-<host>.sh         # deploys that host's jobs as systemd units
 | Job | Host | Schedule | Command |
 | --- | --- | --- | --- |
 | `youtube-social` | air01 | Daily at 09:00 | `venv/bin/python3 main.py --group social` in `/home/kd/tools/upload-video-to-youtube` |
+| `youtube-segments` | air01 | Daily at 08:30 | `venv/bin/python3 main.py --group segments` in `/home/kd/tools/upload-video-to-youtube` |
 
 ## Deploying to a host
 
