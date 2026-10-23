@@ -1,0 +1,12 @@
+[Unit]
+Description=Upload the segments-group video batch to YouTube
+Wants=youtube-segments.timer
+
+[Service]
+Type=oneshot
+User=kd
+WorkingDirectory=/home/kd/tools/upload-video-to-youtube
+# EnvironmentFile is optional (leading "-"): picks up API credentials if the
+# tool stores them in a .env file, without failing the unit when absent.
+EnvironmentFile=-/home/kd/tools/upload-video-to-youtube/.env
+ExecStart=/home/kd/tools/upload-video-to-youtube/venv/bin/python3 main.py --group segments
