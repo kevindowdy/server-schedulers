@@ -1,2 +1,2 @@
-# python-template
-Template repository for Python applications.
+# Server Schedulers
+Centralized repository for managing and deploying scheduled automation jobs across home lab servers. Organizes systemd service and timer configurations by job, with host-specific deployment scripts for consistent, scalable automation management.
