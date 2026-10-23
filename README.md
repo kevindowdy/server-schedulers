@@ -15,6 +15,7 @@ installers/install-<host>.sh         # deploys that host's jobs as systemd units
 | --- | --- | --- | --- |
 | `youtube-social` | air01 | Daily at 09:00 | `venv/bin/python3 main.py --group social` in `/home/kd/tools/upload-video-to-youtube` |
 | `youtube-segments` | air01 | Daily at 08:30 | `venv/bin/python3 main.py --group segments` in `/home/kd/tools/upload-video-to-youtube` |
+| `social-crosspost` | air01 | Daily at 10:00 | `.venv/bin/python main.py` in `/home/kd/tools/upload-videos-to-social-tool` |
 
 ## Deploying to a host
 

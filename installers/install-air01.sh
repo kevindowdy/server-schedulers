@@ -13,6 +13,7 @@ readonly SYSTEMD_UNIT_DIR="/etc/systemd/system"
 readonly AIR01_JOBS=(
   "youtube-social"
   "youtube-segments"
+  "social-crosspost"
 )
 
 require_root() {

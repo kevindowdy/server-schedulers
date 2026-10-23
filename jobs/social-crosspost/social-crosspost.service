@@ -1,0 +1,12 @@
+[Unit]
+Description=Cross-post uploaded videos to social platforms
+Wants=social-crosspost.timer
+
+[Service]
+Type=oneshot
+User=kd
+WorkingDirectory=/home/kd/tools/upload-videos-to-social-tool
+# EnvironmentFile is optional (leading "-"): picks up API credentials if the
+# tool stores them in a .env file, without failing the unit when absent.
+EnvironmentFile=-/home/kd/tools/upload-videos-to-social-tool/.env
+ExecStart=/home/kd/tools/upload-videos-to-social-tool/.venv/bin/python main.py
